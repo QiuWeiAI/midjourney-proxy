@@ -119,6 +119,7 @@ public class SubmitController {
 		} else {
 			description += " " + changeDTO.getAction().name().charAt(0) + changeDTO.getIndex();
 		}
+		/**
 		if (TaskAction.UPSCALE.equals(changeDTO.getAction())) {
 			TaskCondition condition = new TaskCondition().setDescription(description);
 			Task existTask = this.taskStoreService.findOne(condition);
@@ -128,6 +129,7 @@ public class SubmitController {
 						.setProperty("imageUrl", existTask.getImageUrl());
 			}
 		}
+		*/
 		Task targetTask = this.taskStoreService.get(changeDTO.getTaskId());
 		if (targetTask == null) {
 			return SubmitResultVO.fail(ReturnCode.NOT_FOUND, "关联任务不存在或已失效");
